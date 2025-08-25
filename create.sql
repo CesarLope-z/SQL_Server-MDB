@@ -1,1 +1,2 @@
-Create database Base1
+create database Base1
+drop database Base1
