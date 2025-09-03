@@ -1,0 +1,29 @@
+CREATE TABLE ventas (
+    id INT,
+    vendedor VARCHAR(50),
+    producto VARCHAR(50),
+    cantidad INT,
+    precio DECIMAL(10,2)
+);
+
+INSERT INTO ventas (id, vendedor, producto, cantidad, precio) VALUES
+(1, 'Ana', 'Laptop', 2, 800),
+(2, 'Ana', 'Mouse', 5, 20),
+(3, 'Luis', 'Laptop', 1, 800),
+(4, 'Luis', 'Monitor', 3, 150),
+(5, 'Marta', 'Mouse', 10, 20),
+(6, 'Marta', 'Laptop', 1, 800);
+
+SELECT vendedor, SUM(cantidad * precio) AS total_vendido
+FROM ventas
+GROUP BY vendedor;
+
+SELECT vendedor, SUM(cantidad * precio) AS total_vendido
+FROM ventas
+GROUP BY vendedor
+HAVING SUM(cantidad * precio) > 1000;
+
+SELECT producto, COUNT(DISTINCT vendedor) AS num_vendedores
+FROM ventas
+GROUP BY producto
+HAVING COUNT(DISTINCT vendedor) > 1;
