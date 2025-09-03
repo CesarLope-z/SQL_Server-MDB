@@ -1,0 +1,5 @@
+/* select campos from tabla as T1
+join tabla2 as T2
+on T1.idCampo = T2.idcampo
+where T.campo = 'palabra'
+*/
