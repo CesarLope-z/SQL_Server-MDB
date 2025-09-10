@@ -27,3 +27,17 @@ SELECT producto, COUNT(DISTINCT vendedor) AS num_vendedores
 FROM ventas
 GROUP BY producto
 HAVING COUNT(DISTINCT vendedor) > 1;
+
+
+--selecciona todos
+use northwind
+select productId, orderId, quantity 
+from orderhist
+go
+
+--agrupados
+use northwind
+select productId, sum(quantity) as total
+from orderhist 
+group by productId
+go
