@@ -15,3 +15,5 @@ insert into categoria(categoriaNombre)
 values(@NombreCategoria)
 else 
 print('Error categoria ya existe')
+
+--las variables llevan antes la palabra 'declare'
